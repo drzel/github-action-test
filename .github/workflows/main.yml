@@ -1,0 +1,16 @@
+on: [push]
+
+jobs:
+  echo_env_var_job:
+    runs-on: ubuntu-latest
+    name: A job echo env var
+    steps:
+      # To use this repository's private action,
+      # you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Echo env var
+        uses: ./ # Uses an action in the root directory
+        id: echo-env-var
+        env:
+          FOO: ${{ secrets.FOO }}

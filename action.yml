@@ -1,0 +1,5 @@
+name: 'Echo env var'
+description: 'echos the environment variable provided'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
